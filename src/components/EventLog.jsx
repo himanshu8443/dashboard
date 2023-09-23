@@ -12,7 +12,7 @@ const EventLog = () => {
                     see all
                 </button>
             </div>
-            <div className=' flex gap-2 items-center hover:bg-gray-300 rounded-sm p-1'>
+            <div className=' flex gap-2 items-center rounded-sm p-1'>
                 <div className=' flex justify-between w-full'>
                     <div className=' flex gap-1'>
                         <BiSolidKey size={20} />
