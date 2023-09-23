@@ -13,7 +13,7 @@ const Modal = ({ setShowModal }) => {
     return (
         <div className=' fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'>
             <div className=' bg-white p-4 rounded-md shadow-md'>
-                <div className=' flex justify-between items-center md:w-[700px]'>
+                <div className=' flex justify-between items-center w-[80vw] md:w-[700px]'>
                     <h1 className=' text-3xl font-bold'>Invite your team</h1>
                     <button
                         onClick={() => { setShowModal(false) }}
