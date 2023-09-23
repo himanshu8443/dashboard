@@ -13,13 +13,13 @@ const Modal = ({ setShowModal }) => {
     return (
         <div className=' fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center'>
             <div className=' bg-white p-4 rounded-md shadow-md'>
-                <div className=' flex justify-between items-center w-[700px]'>
+                <div className=' flex justify-between items-center md:w-[700px]'>
                     <h1 className=' text-3xl font-bold'>Invite your team</h1>
                     <button
                         onClick={() => { setShowModal(false) }}
                         className=' font-medium text-gray-500'><IoCloseSharp size={30} /></button>
                 </div>
-                <div className='flex gap-8 justify-between items-center mt-10'>
+                <div className='flex flex-col md:flex-row gap-8 justify-between items-center mt-10'>
                     <div className='flex flex-col gap-8 justify-center items-starts'>
                         <div className='flex gap-5 justify-center items-center'>
                             <label className=' text-xl font-medium whitespace-nowrap'>Full Name</label>

@@ -44,7 +44,7 @@ const Chart = ({ durationCost, invitationCost }) => {
 
 
     return (
-        <div className='w-[300px] h-[300px] flex justify-center items-center'>
+        <div className='md:w-[300px] md:h-[300px] flex justify-center items-center'>
             <Doughnut data={data} options={options} />
         </div>
     )
