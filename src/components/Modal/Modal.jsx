@@ -26,26 +26,36 @@ const Modal = ({ setShowModal }) => {
                             <input placeholder='Your Name' type='text' className=' placeholder:text-lg placeholder:mx-auto p-2 border-b-2 border-gray-800 ' />
                         </div>
                         <div className='flex flex-col'>
-                            <div className='flex gap-8 justify-between items-center'>
+                            <div className='flex gap-7 justify-between items-center'>
                                 <label className=' text-xl font-medium whitespace-nowrap'>No. of Invites</label>
-                                <p className=' text-xl font-medium'>{noOfInvites}</p>
+                                <p className=' text-xl font-medium mr-5 border-dotted border-gray-400 border-2 px-2 py-1 rounded-md'>{noOfInvites}</p>
                             </div>
                             <input type='range' min={1} max={500} value={noOfInvites}
                                 onChange={(e) => { setNoOfInvites(e.target.value); setCost(e.target.value * basePrice + durationMultiplier * duration) }}
                                 className=' w-full p-2 border-2 border-gray-300 rounded-md win10-thumb' />
                         </div>
                         <div className='flex flex-col'>
-                            <div className='flex gap-8 justify-between items-center'>
+                            <div className='flex gap-7 justify-between items-center'>
                                 <label className=' text-xl font-medium whitespace-nowrap'>Duration</label>
-                                <p className=' text-xl font-medium'>{duration} Min</p>
+                                <p className=' text-xl font-medium mr-5 border-dotted border-gray-400 border-2 px-2 py-1 rounded-md'>{duration} min</p>
                             </div>
                             <input type='range' min={30} max={240} value={duration}
                                 onChange={(e) => { setDuration(e.target.value); setCost(e.target.value * durationMultiplier + noOfInvites * basePrice) }}
                                 className=' w-full p-2 border-2 border-gray-300 rounded-md win10-thumb' />
                         </div>
-                        <div className='flex gap-8 justify-center items-center'>
-                            <label className=' text-xl font-medium whitespace-nowrap '>Total Cost</label>
-                            <input readOnly type='text' value={'₹ ' + cost} className=' w-20 text-lg p-2 border-2 border-gray-300 rounded-md' />
+                        <div className='flex flex-col gap-2 ml-4'>
+                            <div className=' gap-8 justify-between items-center flex'>
+                                <label className=' text-lg font-medium whitespace-nowrap'>Duration Cost</label>
+                                <p className=' text-lg font-medium mr-5'>₹ {durationMultiplier * duration}</p>
+                            </div>
+                            <div className=' gap-8 justify-between items-center flex'>
+                                <label className=' text-lg font-medium whitespace-nowrap'>Invitation Cost</label>
+                                <p className=' text-lg font-medium mr-5'>₹ {basePrice * noOfInvites}</p>
+                            </div>
+                            <div className='flex gap-8 justify-between items-center'>
+                                <label className=' text-xl font-medium whitespace-nowrap '>Total Cost</label>
+                                <input readOnly type='text' value={'₹ ' + cost} className=' w-20 text-lg p-2 border-2 border-gray-300 rounded-md mr-4' />
+                            </div>
                         </div>
                     </div>
                     <Chart invitationCost={basePrice * noOfInvites} durationCost={durationMultiplier * duration} />
