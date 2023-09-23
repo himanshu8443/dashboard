@@ -11,8 +11,10 @@ const Modal = ({ setShowModal }) => {
     const [duration, setDuration] = useState(30)
     const [cost, setCost] = useState(basePrice * noOfInvites + durationMultiplier * duration)
     return (
-        <div className=' fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center overflow-scroll'>
-            <div className=' bg-white p-4 rounded-md shadow-md overflow-scrolls w-[90vw]  md:w-[700px]'>
+        <div className=' fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center overflow-scroll'
+            onClick={() => { setShowModal(false) }}>
+            <div className=' bg-white p-4 rounded-md shadow-md overflow-scrolls w-[90vw]  md:w-[700px]'
+                onClick={(e) => { e.stopPropagation() }}>
                 <div className=' flex gap-4 justify-between items-center'>
                     <h1 className=' text-3xl font-bold'>Invite your team</h1>
                     <button
