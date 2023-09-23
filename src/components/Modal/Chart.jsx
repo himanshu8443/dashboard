@@ -39,10 +39,6 @@ const Chart = ({ durationCost, invitationCost }) => {
         maintainAspectRatio: false,
 
     };
-
-
-
-
     return (
         <div className='md:w-[300px] md:h-[300px] flex justify-center items-center'>
             <Doughnut data={data} options={options} />
