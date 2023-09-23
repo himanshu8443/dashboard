@@ -19,16 +19,16 @@ const Modal = ({ setShowModal }) => {
                         onClick={() => { setShowModal(false) }}
                         className=' font-medium text-gray-500'><IoCloseSharp size={30} /></button>
                 </div>
-                <div className='flex flex-col md:flex-row gap-8 justify-between items-center mt-10'>
+                <div className='flex flex-col md:flex-row gap-3 justify-between items-center mt-10'>
                     <div className='flex flex-col gap-8 justify-center items-starts'>
                         <div className='flex gap-5 justify-center items-center'>
-                            <label className=' text-xl font-medium whitespace-nowrap'>Full Name</label>
-                            <input placeholder='Your Name' type='text' className=' placeholder:text-lg placeholder:mx-auto p-2 border-b-2 border-gray-800 ' />
+                            <label className='text-base md:text-xl font-medium whitespace-nowrap'>Full Name</label>
+                            <input placeholder='Your Name' type='text' className='placeholder:text-sm md:placeholder:text-lg placeholder:mx-auto p-2 border-b-2 border-gray-800  ' />
                         </div>
                         <div className='flex flex-col'>
                             <div className='flex gap-7 justify-between items-center'>
-                                <label className=' text-xl font-medium whitespace-nowrap'>No. of Invites</label>
-                                <p className=' min-w-[50px] text-center text-xl font-medium mr-5 border-dotted border-gray-400 border-2 px-2 py-1 rounded-md'>{noOfInvites}</p>
+                                <label className=' text-base md:text-xl font-medium whitespace-nowrap'>No. of Invites</label>
+                                <p className=' min-w-[50px] text-center text-base md:text-xl font-medium mr-5 border-dotted border-gray-400 border-2 px-2 py-1 rounded-md'>{noOfInvites}</p>
                             </div>
                             <input type='range' min={1} max={500} value={noOfInvites}
                                 onChange={(e) => { setNoOfInvites(e.target.value); setCost(e.target.value * basePrice + durationMultiplier * duration) }}
@@ -36,8 +36,8 @@ const Modal = ({ setShowModal }) => {
                         </div>
                         <div className='flex flex-col'>
                             <div className='flex gap-7 justify-between items-center'>
-                                <label className=' text-xl font-medium whitespace-nowrap'>Duration</label>
-                                <p className='min-w-[100px] text-center text-xl font-medium mr-5 border-dotted border-gray-400 border-2 px-2 py-1 rounded-md'>{duration} min</p>
+                                <label className='text-base md:text-xl font-medium whitespace-nowrap'>Duration</label>
+                                <p className='min-w-[100px] text-center text-base md:text-xl font-medium mr-5 border-dotted border-gray-400 border-2 px-2 py-1 rounded-md'>{duration} min</p>
                             </div>
                             <input type='range' min={30} max={240} value={duration}
                                 onChange={(e) => { setDuration(e.target.value); setCost(e.target.value * durationMultiplier + noOfInvites * basePrice) }}
